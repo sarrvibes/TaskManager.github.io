@@ -1,10 +1,7 @@
-from manage.tambahTugas import tambahTugas
-from manage.lihatTugas import lihatTugas
-from manage.hapusTugas import hapusTugas
-from manage.updateStatus import update_status
-from manage.check import check_deadline
+from models.operasi import TaskManager
 
 def main_menu(tasks):
+    tasks = TaskManager()
     print("=== Aplikasi Task Manager ===")
     print("1. Tambah Tugas")
     print("2. Lihat Daftar Tugas")
@@ -15,20 +12,20 @@ def main_menu(tasks):
 
     while True:
         pilihan = input("\nPilih menu: ")
-        
+
         if pilihan == '1':
-            tambahTugas(tasks)
+            tasks.tambahTugas()
         elif pilihan == '2':
-            lihatTugas(tasks)
+            tasks.lihatTugas()
         elif pilihan == '3':
-            hapusTugas(tasks)
+            tasks.hapusTugas()
         elif pilihan == '4':
-            update_status(tasks)
+            tasks.update_status()
         elif pilihan == '5':
-            check_deadline(tasks)
-        elif pilihan == 'q':
+            tasks.check_deadline()
+        elif pilihan.lower() == 'q':
             print("Anda Telah Keluar dari Aplikasi.")
             print("=" *25 + "Terima Kasih" + "=" *25)
             break
         else:
-            print("Pilihan tidak valid, coba lagi.")
+            print("Pilihan tidak valid, coba lagi.")
