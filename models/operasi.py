@@ -31,9 +31,27 @@ def tambahTugas(self):
                 print(f"{i}. {task['Judul']} - Mata Kuliah: {task['Mata Kuliah']} - Deadline: {task['deadline']} - Status: {task['status']}") 
 
 
-    
-    
+   def hapusTugas(self):
+        while True:
+            if not self.tasks:
+                print("Tidak ada tugas untuk dihapus.")
+                break
+            else:
+                try:
+                    no_urut = int(input("Pilih nomor tugas yang ingin dihapus: "))
+                    if 1 <= no_urut <= len(self.tasks):
+                        hapus = self.tasks.pop(no_urut - 1)
+                        print(f"Tugas '{hapus['Judul']}' berhasil dihapus!")
+                    else:
+                        print("Nomor tugas tidak valid.")
+                except ValueError:
+                    print("Input tidak valid. Masukkan nomor tugas yang benar.")
 
+                ulangi = input("Apakah Anda ingin menghapus tugas lagi? (y/n): ").lower()
+                if ulangi != "y":
+                    print("Anda kembali ke menu utama")
+                    break 
+    
     
     def update_status(self):
         while True:
