@@ -22,7 +22,7 @@ def tambahTugas(self):
                 print("Anda kembali ke menu utama")
                 break
     
-    def lihatTugas(self):
+def lihatTugas(self):
         if not self.tasks:
             print("Tidak ada tugas.")
         else:
@@ -31,7 +31,7 @@ def tambahTugas(self):
                 print(f"{i}. {task['Judul']} - Mata Kuliah: {task['Mata Kuliah']} - Deadline: {task['deadline']} - Status: {task['status']}") 
 
 
-   def hapusTugas(self):
+def hapusTugas(self):
         while True:
             if not self.tasks:
                 print("Tidak ada tugas untuk dihapus.")
@@ -53,7 +53,7 @@ def tambahTugas(self):
                     break 
     
     
-    def update_status(self):
+def update_status(self):
         while True:
             no_urut = int(input("Pilih nomor tugas yang ingin diperbarui statusnya: "))
             if 1 <= no_urut <= len(self.tasks):
@@ -68,7 +68,7 @@ def tambahTugas(self):
                 print("Anda kembali ke menu utama")
                 break
             
-    def check_deadline(self, days_before=2):
+def check_deadline(self, days_before=2):
         today = datetime.today().date()
         pengingat = today + timedelta(days=days_before)
         
