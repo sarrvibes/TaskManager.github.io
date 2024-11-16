@@ -22,7 +22,16 @@ def tambahTugas(self):
                 print("Anda kembali ke menu utama")
                 break
     
+    def lihatTugas(self):
+        if not self.tasks:
+            print("Tidak ada tugas.")
+        else:
+            print("=" * 20 + " DAFTAR TUGAS " + "=" * 20)
+            for i, task in enumerate(self.tasks, start=1):
+                print(f"{i}. {task['Judul']} - Mata Kuliah: {task['Mata Kuliah']} - Deadline: {task['deadline']} - Status: {task['status']}") 
 
+
+    
     
 
     
