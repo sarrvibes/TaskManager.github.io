@@ -4,7 +4,23 @@ from models.task import Task  # Import Task class
 class TaskManager:
     def __init__(self):
         self.tasks = []
-
+def tambahTugas(self):
+        while True:
+            judul = input("Masukkan judul tugas: ")
+            mataKuliah = input("Masukkan mata kuliah: ")
+            deadline = input("Masukkan deadline tugas (YYYY-MM-DD): ")
+            self.tasks.append({
+                "Judul": judul,
+                "Mata Kuliah": mataKuliah,
+                "deadline": deadline,
+                "status": "Belum selesai"
+            })
+            print(f"Tugas '{judul}' berhasil ditambahkan!")
+            
+            ulangi = input("Apakah Anda ingin menambahkan tugas lagi? (y/n): ").lower()
+            if ulangi != "y":
+                print("Anda kembali ke menu utama")
+                break
     
 
     
