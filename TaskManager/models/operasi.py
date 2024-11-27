@@ -36,7 +36,6 @@ class TaskManager:
             print("=" * 25 + " DAFTAR TUGAS " + "=" * 25)
             for i, task in enumerate(self.tasks, start=1):
                 print(f"{i}. {task}")
-                
                 def hapus_tugas(self):
         while True:
             if not self.tasks:
