@@ -36,3 +36,25 @@ class TaskManager:
             print("=" * 25 + " DAFTAR TUGAS " + "=" * 25)
             for i, task in enumerate(self.tasks, start=1):
                 print(f"{i}. {task}")
+                
+                def hapus_tugas(self):
+        while True:
+            if not self.tasks:
+                print("\nTidak ada tugas untuk dihapus.")
+                break
+            else:
+                self.lihat_tugas()
+                try:
+                    no_urut = int(input("\nPilih nomor tugas yang ingin dihapus: "))
+                    if 1 <= no_urut <= len(self.tasks):
+                        tugas_dihapus = self.tasks.pop(no_urut - 1)
+                        print(f"Tugas '{tugas_dihapus.judul}' berhasil dihapus!")
+                    else:
+                        print("Nomor tugas tidak valid.")
+                except ValueError:
+                    print("Input tidak valid. Masukkan nomor tugas yang benar.")
+
+                ulangi = input("Apakah Anda ingin menghapus tugas lagi? (y/n): ").lower()
+                if ulangi != "y":
+                    print("Anda kembali ke menu utama.")
+                    break
