@@ -57,3 +57,21 @@ class TaskManager:
                 if ulangi != "y":
                     print("Anda kembali ke menu utama.")
                     break
+
+     def update_status(self):
+        while True:
+            self.lihat_tugas()
+            try:
+                no_urut = int(input("\nPilih nomor tugas yang ingin diperbarui statusnya: "))
+                if 1 <= no_urut <= len(self.tasks):
+                    self.tasks[no_urut - 1].status = "Selesai"  # Mengubah status langsung di objek Task
+                    print(f"Tugas '{self.tasks[no_urut - 1].judul}' telah selesai!") 
+                else:
+                    print("Nomor tugas tidak valid.")
+            except ValueError:
+                print("Input tidak valid. Masukkan nomor tugas yang benar.")
+
+            ulangi = input("Apakah Anda ingin mengubah status tugas lagi? (y/n): ").lower()
+            if ulangi != "y":
+                print("Anda kembali ke menu utama.")
+                break
