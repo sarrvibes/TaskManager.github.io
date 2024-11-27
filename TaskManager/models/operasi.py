@@ -28,3 +28,11 @@ class TaskManager:
             if ulangi != "y":
                 print("Anda kembali ke menu utama.")
                 break
+
+    def lihat_tugas(self):
+        if not self.tasks:
+            print("Tidak ada tugas.")
+        else:
+            print("=" * 25 + " DAFTAR TUGAS " + "=" * 25)
+            for i, task in enumerate(self.tasks, start=1):
+                print(f"{i}. {task}")
