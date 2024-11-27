@@ -58,7 +58,7 @@ class TaskManager:
                     print("Anda kembali ke menu utama.")
                     break
 
-     def update_status(self):
+    def update_status(self):
         while True:
             self.lihat_tugas()
             try:
