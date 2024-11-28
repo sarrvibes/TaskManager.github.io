@@ -75,3 +75,15 @@ class TaskManager:
             if ulangi != "y":
                 print("Anda kembali ke menu utama.")
                 break
+
+    def check_deadline(self, days_before=2):
+        today = datetime.today().date()
+        pengingat = today + timedelta(days=days_before)
+
+        for task in self.tasks:
+            if today > task.deadline:
+                print(f"⚠ Tugas '{task.judul}' sudah lewat deadline ❗")
+            elif today <= task.deadline <= pengingat:
+                print(f"🔔 Tugas '{task.judul}' mendekati deadline pada {task.deadline} ❗❗")
+            else:
+                print(f"👌 Tugas '{task.judul}' belum mendekati deadline.")
